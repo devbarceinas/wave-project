@@ -3,19 +3,23 @@
   cursor: pointer;
   border: 0;
   border-radius: 8px;
-  font-weight: 700;
-  line-height: 1;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 16px;
+  gap: 12px;
 }
 
 .storybook-button--primary {
   background-color: #B1F149;
-  border-color: 1px solid #CAF684;
+  border: 1px solid #CAF684;
   color: #232A33;
 }
 
 .storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset; */
   background-color: transparent;
-  color: #333;
+  border: 1px solid #B1F149;
+  color: #B1F149;
 }
