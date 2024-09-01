@@ -1,0 +1,26 @@
+.storybook-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 32px;
+  border-radius: 4px;
+  padding: 4px 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.4px;
+  color: #161A22;
+}
+
+.storybook-badge--success {
+  background-color: #34D399;
+}
+
+.storybook-badge--warning {
+  background-color: #FDE68A;
+}
+
+.storybook-badge--danger {
+  background-color: #F87171;
+}
