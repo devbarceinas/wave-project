@@ -11,9 +11,7 @@ export const Badge = ({
 }: BadgeProps) => {
 
   return (
-    <span className={
-      `storybook-badge storybook-badge--${variant}`
-    }>
+    <span className={`storybook-badge storybook-badge--${variant}`}>
       {text}
     </span>
   );
