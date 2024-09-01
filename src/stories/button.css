@@ -1,5 +1,9 @@
 .storybook-button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 44px;
   cursor: pointer;
   border: 0;
   border-radius: 8px;
