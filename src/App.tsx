@@ -7,9 +7,7 @@ const App = () => {
     <>
       <Button
         primary={true}
-        size='medium'
-        backgroundColor='blue'
-        label='Hola'
+        label='Buscar'
       />
     </>
   )
