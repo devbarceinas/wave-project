@@ -65,29 +65,26 @@ export const Table = ({
   return (
     <div className="storybook-table">
       <div className="storybook-table--row storybook-table--header">
-        <div>Nombre</div>
-        <div>Correo</div>
-        <div>Estado</div>
-        <div>No. de Pedido</div>
-        <div>Estatus</div>
-        <div>Acciones</div>
+        <div className="storybook-table--cell">Nombre</div>
+        <div className="storybook-table--cell">Correo</div>
+        <div className="storybook-table--cell">Estado</div>
+        <div className="storybook-table--cell">No. de pedido</div>
+        <div className="storybook-table--cell">Estatus</div>
+        <div className="storybook-table--cell">Acciones</div>
       </div>
       {paginatedData?.map(item => (
-        <div key={item.id} className="storybook-table--row">
+         <div key={item.id} className="storybook-table--row">
           <div className="storybook-table--cell">{item.name}</div>
           <div className="storybook-table--cell">{item.email}</div>
           <div className="storybook-table--cell">{item.state}</div>
           <div className="storybook-table--cell">{item.orderNumber}</div>
           <div className="storybook-table--cell">
-            <Badge 
+            <Badge
               variant={item.status}
-              text={item.status} 
+              text={item.status}
             />
           </div>
-          <div className="storybook-table--cell">
-            <p>accion 1</p>
-            <p>accion 1</p>
-          </div>
+          <div className="storybook-table--cell">Acciones</div>
         </div>
       ))}
     </div>
