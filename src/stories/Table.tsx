@@ -86,8 +86,10 @@ export const Table = ({
             />
           </div>
           <div className="storybook-table--cell">
-            <BsEye/>
-            <BsTrash/>
+            <div className="storybook-table--icons">
+              <BsEye/>
+              <BsTrash/>
+            </div>
           </div>
         </div>
       ))}
