@@ -13,14 +13,14 @@
   color: #161A22;
 }
 
-.storybook-badge--success {
+.storybook-badge--enviado {
   background-color: #34D399;
 }
 
-.storybook-badge--warning {
+.storybook-badge--pendiente {
   background-color: #FDE68A;
 }
 
-.storybook-badge--danger {
+.storybook-badge--cancelado {
   background-color: #F87171;
 }

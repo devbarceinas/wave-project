@@ -1,7 +1,7 @@
 import './badge.css';
 
 export interface BadgeProps {
-  variant: 'success' | 'warning' | 'danger';
+  variant: 'Enviado' | 'Pendiente' | 'Cancelado';
   text: String;
 };
 
@@ -11,7 +11,7 @@ export const Badge = ({
 }: BadgeProps) => {
 
   return (
-    <span className={`storybook-badge storybook-badge--${variant}`}>
+    <span className={`storybook-badge storybook-badge--${variant.toLowerCase()}`}>
       {text}
     </span>
   );

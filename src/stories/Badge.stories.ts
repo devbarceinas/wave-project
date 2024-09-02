@@ -21,21 +21,21 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Success: Story = {
   args: {
-    variant: 'success',
+    variant: 'Enviado',
     text: 'Enviado',
   },
 };
 
 export const Warning: Story = {
   args: {
-    variant: 'warning',
+    variant: 'Pendiente',
     text: 'Pendiente',
   },
 };
 
 export const Danger: Story = {
   args: {
-    variant: 'danger',
+    variant: 'Cancelado',
     text: 'Cancelado',
   },
 };
