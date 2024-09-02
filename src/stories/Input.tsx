@@ -1,11 +1,11 @@
 import './input.css';
 
 export interface InputProps {
-  label?: string;
-  type?: string;
+  label: string;
+  type: string;
   placeholder?: string;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: string) => void;
 }
 
 export const Input = ({
@@ -24,7 +24,7 @@ export const Input = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={onChange}
+        onChange={(event) => onChange(event.target.value)}
       />
     </div>  
   )
