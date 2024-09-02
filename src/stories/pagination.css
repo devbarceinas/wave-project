@@ -1,0 +1,25 @@
+.storybook-pagination--list {
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  list-style: none;
+}
+
+.storybook-pagination--item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 28px;
+  margin: 0 5px;
+  padding: 4px 8px;
+  gap: 10px;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #9CA3AF;
+}
+
+.storybook-pagination--item:hover {
+  background-color: #232A33;
+}
