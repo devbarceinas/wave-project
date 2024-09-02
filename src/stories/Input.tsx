@@ -10,7 +10,7 @@ export interface InputProps {
 
 export const Input = ({
   label,
-  type = 'text',
+  type,
   placeholder,
   value,
   onChange
