@@ -3,7 +3,7 @@
   flex-direction: column;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  width: 1720px;
+  width: 1680px;
   border: 1px solid #374151;
   border-radius: 8px;
   color: #9CA3AF;
@@ -14,15 +14,19 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #9CA3AF;
-  background-color: #2F3646;
+  background-color: #161A22;
 }
 
 .storybook-table--row:last-child {
   border-bottom: none;
 }
 
+.storybook-table--row:hover {
+  background-color: #2F3646;
+}
+
 .storybook-table--header {
-  background-color: #374151;
+  background-color: #2F3646;
 }
 
 .storybook-table--cell {

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { BsEye, BsTrash } from "react-icons/bs";
 import { Badge } from "./Badge";
 import './table.css';
 
@@ -84,7 +85,10 @@ export const Table = ({
               text={item.status}
             />
           </div>
-          <div className="storybook-table--cell">Acciones</div>
+          <div className="storybook-table--cell">
+            <BsEye/>
+            <BsTrash/>
+          </div>
         </div>
       ))}
     </div>
