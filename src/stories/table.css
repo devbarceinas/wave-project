@@ -3,18 +3,22 @@
   flex-direction: column;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  width: 1600px;
   border: 1px solid #374151;
   border-radius: 8px;
   color: #9CA3AF;
   overflow: hidden;
+  background-color: #161A22;
+  width: 1600px;
+}
+
+.storybook-table--header {
+  display: flex;
+  background-color: #2F3646;
 }
 
 .storybook-table--row {
   display: flex;
-  align-items: center;
   border-bottom: 1px solid #9CA3AF;
-  background-color: #161A22;
 }
 
 .storybook-table--row:last-child {
@@ -25,12 +29,9 @@
   background-color: #2F3646;
 }
 
-.storybook-table--header {
-  background-color: #2F3646;
-}
-
 .storybook-table--cell {
   flex: 1;
+  text-align: left;
   padding: 12px 15px;
 }
 
