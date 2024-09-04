@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { BsEye, BsTrash } from "react-icons/bs";
+import { FaSort } from "react-icons/fa";
 import { Badge } from "./Badge";
 import './table.css';
 
@@ -19,54 +20,54 @@ export interface TableInfo {
 export const Table = ({
   data
 }: TableProps) => {
+  const [sortKey, setSortKey] = useState<keyof TableInfo>('id');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchInfo, setSearchInfo] = useState('');
 
-  const [sort, setSort] = useState<{key: keyof TableInfo; direction: 'ascending' | 'descending'} | null>(null);
-  const [filter, setFilter] = useState<string>('All');
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 5;
 
-  const filteredInfo = useMemo(() => {
-    if (filter === 'All') {
-      return data;
+  const handleSort = (key: keyof TableInfo) => {
+    if (sortKey === key) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortOrder('desc');
     }
+  }
 
-    return data.filter(item => item.status === filter);
-  }, [data, filter]);
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchInfo.toLowerCase()) ||
+      item.status.toLowerCase().includes(searchInfo.toLowerCase())
+  );
 
-  const sortedData = useMemo(() => {
-    if (sort !== null) {
-      const sorted = [...filteredInfo].sort((a, b) => {
-        if (a[sort.key] < b[sort.key]) {
-          return sort.direction === 'ascending' ? -1 : 1;
-        }
-        if (a[sort.key] > b[sort.key]) {
-          return sort.direction === 'ascending' ? 1 : -1;
-        }
-        return 0;
-      });
-      return sorted;
-    }
-    return filteredInfo;
-  }, [filteredInfo, sort]);
+  const sortedData = [...filteredData].sort((a, b) => {
+    const aKey = a[sortKey];
+    const bKey = b[sortKey];
 
-  const paginatedData = useMemo(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    return sortedData.slice(start, end);
-  }, [sortedData, currentPage, itemsPerPage]);
+    if (aKey < bKey) return sortOrder === 'asc' ? -1 : 1;
+    if (aKey > bKey) return sortOrder === 'asc' ? 1 : -1;
+    return 0;
+  });
 
-  const requestSort = (key: keyof TableInfo) => {
-    let direction: 'ascending' | 'descending' = 'ascending';
-    if (sort && sort.key === key && sort.direction === 'ascending') {
-      direction = 'descending';
-    }
-    setSort({ key, direction });
-  };
+  const paginatedData = sortedData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <div className="storybook-table">
       <div className="storybook-table--row storybook-table--header">
-        <div className="storybook-table--cell">Nombre</div>
+        <div className="storybook-table--cell">
+            <div className="storybook-table--cell-sort">
+              Nombre
+              <FaSort
+                className="storybook-table--cell-cursor" 
+                onClick={() => handleSort('name')}
+              />
+            </div>
+        </div>
         <div className="storybook-table--cell">Correo</div>
         <div className="storybook-table--cell">Estado</div>
         <div className="storybook-table--cell">No. de pedido</div>

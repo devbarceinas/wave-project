@@ -35,6 +35,16 @@
   padding: 12px 15px;
 }
 
+  .storybook-table--cell-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+    .storybook-table--cell-cursor {
+      cursor: pointer;
+    }
+
 .storybook-table--icons {
   display: flex;
   gap: 12px;
