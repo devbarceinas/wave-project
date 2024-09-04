@@ -22,7 +22,7 @@ export const TableDefault: Story = {
     data: [
       {
         id: 1,
-        name: "Kappa Services",
+        name: "Bappa Services",
         email: "contacto@thetaenterprises.com",
         state: "Hidalgo",
         orderNumber: "WV-70037785-01",
@@ -38,7 +38,7 @@ export const TableDefault: Story = {
       },
       {
         id: 3,
-        name: "Tau Corp",
+        name: "Aau Corp",
         email: "contacto@betacorp.com",
         state: "Campeche",
         orderNumber: "WV-69696853-03",

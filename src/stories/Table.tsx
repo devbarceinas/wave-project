@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BsEye, BsTrash } from "react-icons/bs";
 import { FaSort } from "react-icons/fa";
+import { RiFilter2Fill } from "react-icons/ri";
 import { Badge } from "./Badge";
 import './table.css';
 
@@ -71,7 +72,15 @@ export const Table = ({
         <div className="storybook-table--cell">Correo</div>
         <div className="storybook-table--cell">Estado</div>
         <div className="storybook-table--cell">No. de pedido</div>
-        <div className="storybook-table--cell">Estatus</div>
+        <div className="storybook-table--cell">
+          <div className="storybook-table--cell-sort">
+            Estatus
+            <RiFilter2Fill
+              className="storybook-table--cell-cursor" 
+              onClick={() => handleSort('status')}
+            />
+          </div>
+        </div>
         <div className="storybook-table--cell">Acciones</div>
       </div>
       {paginatedData?.map(item => (
