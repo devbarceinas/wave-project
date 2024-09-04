@@ -10,7 +10,6 @@
   align-items: center;
   width: 36px;
   height: 28px;
-  margin: 0 5px;
   padding: 4px 8px;
   gap: 10px;
   border-radius: 4px;
@@ -21,5 +20,9 @@
 }
 
 .storybook-pagination--item:hover {
+  background-color: #232A33;
+}
+
+.active {
   background-color: #232A33;
 }
