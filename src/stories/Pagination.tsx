@@ -13,8 +13,8 @@ export const Pagination = ({
   onPageChange
 }: PaginationProps) => {
 
-  const handlePrevious = () => currentPage > 1 && onPageChange(currentPage - 1);
-  const handleNext = () => currentPage < totalPage && onPageChange(currentPage + 1);
+  const handlePrevious = () => currentPage > 1 ? onPageChange(currentPage - 1) : '';
+  const handleNext = () => currentPage < totalPage ? onPageChange(currentPage + 1) : '';
 
   const renderPageNumbers = () => {
     const pages = [];
@@ -23,7 +23,7 @@ export const Pagination = ({
         <li 
           key={i} 
           onClick={() => onPageChange(i)}
-          className={`storybook-pagination--item ${(i === currentPage) && 'active'}`}>
+          className={`storybook-pagination--item ${(i === currentPage) ? 'active' : ''}`}>
           {i}
         </li>
       )

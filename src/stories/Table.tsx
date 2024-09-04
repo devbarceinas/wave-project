@@ -4,6 +4,7 @@ import { FaSort } from "react-icons/fa";
 import { RiFilter2Fill } from "react-icons/ri";
 import { Badge } from "./Badge";
 import './table.css';
+import { Pagination } from "./Pagination";
 
 export interface TableProps {
   data: TableInfo[];
@@ -103,6 +104,13 @@ export const Table = ({
           </div>
         </div>
       ))}
+      <div className="storybook-table--pagination">
+        <Pagination
+          onPageChange={(page) => setCurrentPage(page)}
+          currentPage={currentPage}
+          totalPage={Math.ceil(filteredData.length / itemsPerPage)}
+        />
+      </div>
     </div>
   );
 };

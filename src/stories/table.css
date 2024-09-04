@@ -39,6 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 100px;
   }
 
     .storybook-table--cell-cursor {
@@ -49,4 +50,10 @@
   display: flex;
   gap: 12px;
   font-size: 24px;
+}
+
+.storybook-table--pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
